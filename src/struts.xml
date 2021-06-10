@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="user_*" class="com.gyf.itedu.web.action.UserAction" method="{1}">
+            <result name="success">/success.jsp</result>
+        </action>
+        <action name="topic_*" class="com.gyf.itedu.web.action.TopicAction" method="{1}">
+            <result name="list">/listTopics.jsp</result>
+        </action>
+        <action name="login" class="userAction" method="login">
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        <action name="gologin" class="userAction" method="gologin">
+            <result name="success">/login.jsp</result>
+        </action>
+        <action name="register" class="userAction" method="register">
+            <result name="success">/success.jsp</result>
+        </action>
+    </package>
+</struts>
